@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: sushmaboddu/webblog 
+  repo: sushmaboddu/blog 
   
 media_folder: blog
 public_folder: assets
