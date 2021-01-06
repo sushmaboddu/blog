@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> 32f702f74b3884d7401687e9be37654b9e3756d6
+@font-face {
+  font-family: "Nunito";
+  font-weight: normal;
+  src: url("../fonts/Nunito/Nunito-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-weight: 800;
+  src: url("../fonts/Nunito/Nunito-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Nunito";
+  font-weight: 500;
+  src: url("../fonts/Nunito/Nunito-SemiBold.ttf") format("truetype");
+}

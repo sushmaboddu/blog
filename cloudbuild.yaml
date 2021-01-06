@@ -1,0 +1,21 @@
+steps: 
+    # Install dependencies
+      - name: node:10.16.0
+        id: Installing dependencies...
+        entrypoint: npm
+        args: ["install"] 
+        waitFor: ["-"] # Begin immediately
+    # Gatsby build
+      - name: node:10.16.0
+        id: Building Gatsby site...
+        entrypoint: npm
+        args: ["run", "build"]    
+   
+      
+    # Wrangler
+      - name: 'node'
+        args: ['bash', '-c', 'npm i @cloudflare/wrangler && ./node_modules/.bin/wrangler publish']
+        env:
+         - 'CF_API_TOKEN=${_CF_API_TOKEN}'
+         - 'CF_ACCOUNT_ID=${_CF_ACCOUNT_ID}'
+         - 'USER=root'

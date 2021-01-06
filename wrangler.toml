@@ -1,0 +1,10 @@
+name = "web"
+type = "webpack"
+account_id = "5813be1fe70eccf2442f055729a40f78"
+workers_dev = true
+route = ""
+zone_id = ""
+
+[site]
+bucket = "./public"
+entry-point = "workers-site"
