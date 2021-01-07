@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 
 import Page from '../components/Page'
 import IndexLayout from '../layouts'
-import TagPreview from "../components/tagWidget/TagPreview"
 import Container from '../components/Container'
 
 
@@ -31,13 +30,13 @@ interface PageTemplateProps {
 }
 
 const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => (
+
   <IndexLayout>
     <Page>
       <Container>
         <h1>{data.markdownRemark.frontmatter.title}</h1>
         {/* eslint-disable-next-line react/no-danger */}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-        <TagPreview value={data}/>
         </Container>
     </Page>
   </IndexLayout>

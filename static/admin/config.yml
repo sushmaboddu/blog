@@ -15,9 +15,5 @@ collections:
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
+      # - { name: tags, label: Tags, widget: tags, separator: ",", required: false}
   
-      - name: tags
-        label: Tags
-        widget: tags
-        separator: ","
-        required: false

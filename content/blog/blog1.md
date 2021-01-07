@@ -3,26 +3,25 @@ path: blog1
 date: 2020-12-28T10:42:04.734Z
 title: 'Build a Blog with Gatsby, Netlify and React:'
 ---
-Build a Blog with Gatsby, Netlify and React:
+
 
 # Prerequisites:
 
- `print "`**`Hello world`**`";`
  
 **GitHub Account** 
 
 
-> `"`**`Install Gatsby CLI(npm install -g gatsby-cli)`**`"`
+>`"`**`Install Gatsby CLI(npm install -g gatsby-cli)`**`"`
 
 
 
 > `"`**`Install Netlify CMS (npm i netlify-cms-app@2.11.20 gatsby-plugin-netlify-cms)`**`"`
                                                                              
 
-`Add Markdown Support to Gatsby`
+**Add Markdown Support to Gatsby**
 
 
-**(npm i gatsby-source-filesystem gatsby-transformer-remark)**
+> `"`**`(npm i gatsby-source-filesystem gatsby-transformer-remark)`**`"`
 
 
 
@@ -72,10 +71,10 @@ Restart your app using
      create: true
      fields:
         
-        - { name: path, label: Path }
-        - { name: date, label: Date, widget: datetime }
-        - { name: title, label: Title }
-        - { name: body, label: Body, widget: markdown }
+    - { name: path, label: Path }
+    - { name: date, label: Date, widget: datetime }
+    - { name: title, label: Title }
+    - { name: body, label: Body, widget: markdown }
 ```
 
 
@@ -217,7 +216,7 @@ Create a src/components/BlogRoll.js file. This file will contain a React compone
 GraphQL.
  
 
-```tsx 
+```js
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
@@ -274,7 +273,7 @@ BlogRoll.propTypes = {
     }),
   }),
 };
- ```js
+
 export default () => (
   <StaticQuery
     query={graphql`
@@ -304,7 +303,7 @@ export default () => (
  
 Create a new page at src/pages/blog.js to serve as the index page for blogs.
 
-```tsx 
+```js
 import React from 'react'
 import BlogRoll from '../components/BlogRoll'
  
@@ -338,7 +337,7 @@ export default function Index() {
  
 **Restart your Gatsby app using npm start and navigate to http://localhost:8000.**
 
-```tsx
+```js
 You’ll receive an error because your project doesn’t have Markdown support.
 
 Generating development JavaScript bundle failed
@@ -372,7 +371,8 @@ Install a couple of Gatsby plugins to make this happen.
 **npm i gatsby-source-filesystem gatsby-transformer-remark**
  
 Then configure them in gatsby-config.js:
-```tsx
+
+```js
 module.exports = {
   plugins: [
     `gatsby-plugin-netlify-cms`,
@@ -398,7 +398,7 @@ Use Gatsby’s Node API to Generate Static Blog Pages
 
 Create a gatsby-node.js in the root directory of your project and add code to create a static page for each blog.
  
- ```tsx
+ ```js
 const path = require(`path`);
  
 exports.createPages = async ({actions, graphql, reporter}) => {
@@ -437,6 +437,8 @@ exports.createPages = async ({actions, graphql, reporter}) => {
     })
   })
 };
+```
+
 You might notice this JavaScript code uses a template at src/templates/blog.js. Create this file with the following code in it.
 
 ```js
@@ -477,7 +479,7 @@ Restart your app to see Markdown rendering properly!
  
 Commit your changes and verify everything works in production.
 
-```tsx
+```js
 git add .
 git commit -m "Add /blog and Markdown support"
 git push origin master
