@@ -4,6 +4,7 @@ import { getEmSize } from './mixins'
 export default `
   html {
     box-sizing: border-box;
+
   }
 
   *,
@@ -21,7 +22,7 @@ export default `
     width: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
-    font-family: ${fonts.sansSerif};
+    font-family: ${fonts.Nunito};
     color: ${colors.black};
     background-color: ${colors.white};
     -webkit-text-size-adjust: 100%;
@@ -34,7 +35,7 @@ export default `
 
     &:hover,
     &:focus {
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 
@@ -58,6 +59,7 @@ export default `
     border: 1px solid ${colors.ui.light};
     font-size: 85%;
     border-collapse: collapse;
+    background: #E5E5E5;
   }
 
   td,
@@ -75,9 +77,11 @@ export default `
       &:nth-of-type(odd) {
         td {
           background-color: ${colors.ui.whisper};
+          background: #E5E5E5;
         }
         tr {
           background-color: ${colors.ui.whisper};
+          background: #E5E5E5;
         }
       }
     }
@@ -138,6 +142,7 @@ export default `
     margin: 1.5rem 0;
     border: 0;
     border-top: 1px solid ${colors.ui.light};
+    background: #E5E5E5;
   }
 
   blockquote {
@@ -145,6 +150,7 @@ export default `
     padding: .5rem 1rem;
     border-left: .25rem solid ${colors.ui.light};
     color: ${colors.gray.calm};
+    background: #E5E5E5;
 
     p {
       &:last-child {

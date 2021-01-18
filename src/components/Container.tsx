@@ -12,8 +12,9 @@ const StyledContainer = styled.div`
   max-width: ${getEmSize(widths.lg)}em;
 
 
+
   // position: relative;
-  margin-left: 20%;
+  margin-left: 10%;
   margin-right: 10%;
   width:80%;
   display:flex;

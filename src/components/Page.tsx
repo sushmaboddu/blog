@@ -8,6 +8,7 @@ const StyledPage = styled.div`
   position: relative;
   margin-bottom: 3rem;
   padding: ${dimensions.containerPadding}rem;
+  // background: #E5E5E5;
 `
 
 interface PageProps {

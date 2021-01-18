@@ -10,10 +10,15 @@ collections:
     label: Blog
     folder: content/blog
     create: true
+    slug: 'index'
+    media_folder: ''
+    public_folder: ''
+    path: '{{title}}/index'
+    editor:
+      preview: true
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
-      # - { name: tags, label: Tags, widget: tags, separator: ",", required: false}
-  
+      

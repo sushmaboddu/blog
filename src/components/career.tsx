@@ -436,7 +436,7 @@ const BlogBox = styled.div`
   flex-direction:row;
   margin-top:80px;
   padding-bottom:5%;
-  gap: 40px;
+  gap:40px;
 `;
 
 
@@ -449,7 +449,7 @@ const BoxOne = styled.div`
   justify-content:center;
   padding-left:30px;
   padding-right:30px;
-  border:2px solid red;
+  // border:2px solid red;
   gap:15px;
 `;
 

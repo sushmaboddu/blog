@@ -11,26 +11,23 @@ title: 'Build a Blog with Gatsby, Netlify and React:'
 **GitHub Account** 
 
 
->`"`**`Install Gatsby CLI(npm install -g gatsby-cli)`**`"`
+>Install Gatsby CLI(npm install -g gatsby-cli)
 
 
 
-> `"`**`Install Netlify CMS (npm i netlify-cms-app@2.11.20 gatsby-plugin-netlify-cms)`**`"`
+> Install Netlify CMS (npm i netlify-cms-app@2.11.20 gatsby-plugin-netlify-cms)
                                                                              
 
 **Add Markdown Support to Gatsby**
 
 
-> `"`**`(npm i gatsby-source-filesystem gatsby-transformer-remark)`**`"`
-
-
+>(npm i gatsby-source-filesystem gatsby-transformer-remark)
 
 ## Create a New Project with Gatsby
 
 **Step1**: gatsby new gatsby-netlify-projectname Githubrepolink
 
 **Step2**: gatsby develop
-
 
 **Add Netlify CMS for Content Management**
 
@@ -48,12 +45,7 @@ module.exports = {
 }
 ```
 
-Then create a static/admin directory and a config.yml file in it.
-**static/admin/config.yml**
-
-
-
-
+Then create a static/admin directory and a config.yml file in it. **static/admin/config.yml**
 
 Restart your app using 
 
@@ -77,8 +69,6 @@ Restart your app using
     - { name: body, label: Body, widget: markdown }
 ```
 
-
-    
 **Ctrl+C and npm start**
 
 You’ll now be able to edit content at  **http://localhost:8000/admin/.**
@@ -91,36 +81,27 @@ Unfortunately, you’ll lose your post as soon as you restart your development s
 
 CMS to store files in Git instead!
 
-
-
 Integrate Netlify CMS with GitHub for Continuous Deployment
 
-To save to a Git repository, you can create a repo on GitHub,
-You can add Git to your Gatsby project using the following commands:
+To save to a Git repository, you can create a repo on GitHub, You can add Git to your Gatsby project using the following commands:
 
 ```tsx
-            -git init
-            -git add .
-            -git commit -m "Add project to Git"
-            -git remote add origin GitRepoLink
-            -git push origin master
+  -git init
+  -git add .
+  -git commit -m "Add project to Git"
+  -git remote add origin GitRepoLink
+  -git push origin master
+  ```
  
- ```
+
+
 Now you can publish your Gatsby site straight from GitHub using Netlify’s create a new site page.
 
-
-  
   Find the repository you deployed to.
 
-
- 
 Accept all the default deploy settings and click Deploy site.
 
-
-
 In a couple of minutes, your site will be live!
-
- 
 
 You’ve built a React app, checked it into source control, and published it to production - that’s pretty cool!
 
@@ -173,8 +154,6 @@ Homepage URL: <copy URL from Netlify>
 
 Authorization callback URL: https://api.netlify.com/auth/done
 
-
- 
 Click Register application and you’ll be provided with the client ID and secret you were looking for.
 
 1)Copy and paste these values into your Netlify OAuth provider dialog and click Install.
@@ -189,7 +168,7 @@ and it’ll go away. For the path, use something like /blog/first-post.
 
 4)In a terminal window, run git pull origin master and you’ll see your project is updated with the post you created.
 
-git pull origin master
+**git pull origin master**
 
 ```tsx
 remote: Enumerating objects: 6, done.
@@ -204,19 +183,17 @@ Merge made by the 'recursive' strategy.
  blog/deploy-cloudflare-workers.md | 42 ++++++++++++++++++++++++++++++++++++++++++
  1 file changed, 42 insertions(+)
  create mode 100644 blog/deploy-cloudflare-workers.md
- ```
- 
+```
+
 **Run npm start locally to see the blog at http://localhost/admin/.**
- 
- 
+
 Render Blogs with a New BlogRoll React Component
 
 Create a src/components/BlogRoll.js file. This file will contain a React component that queries for blog posts using 
 
 GraphQL.
- 
 
-```js
+````tsx
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
@@ -298,12 +275,11 @@ export default () => (
     render={(data, count) => <BlogRoll data={data} count={count} />}
   />
 )
-``` 
- 
- 
+````
+
 Create a new page at src/pages/blog.js to serve as the index page for blogs.
 
-```js
+```tsx
 import React from 'react'
 import BlogRoll from '../components/BlogRoll'
  
@@ -321,20 +297,20 @@ export default class BlogIndexPage extends React.Component {
     )
   }
 }
- ```
- 
+```
+
 **Then add a link to it in src/pages/index.js:**
 
- ```js
+```js
 import React from "react";
- 
+
 import Home from "../components/home";
- 
+
 export default function Index() {
- return <Home />;
+return <Home />;
 }
 ```
- 
+
 **Restart your Gatsby app using npm start and navigate to http://localhost:8000.**
 
 ```js
@@ -350,7 +326,7 @@ Generating development JavaScript bundle failed
  
 File: src/components/BlogRoll.js
 ```
- 
+
 Add Markdown Support to Gatsby
 
 Gatsby’s Add Markdown Pages docs show the process that it uses to create pages from Markdown files:
@@ -361,7 +337,6 @@ Transform Markdown to HTML and frontmatter to data
 
 Add a Markdown file
 
-
 Create a page component for the Markdown files
 
 Create static pages using Gatsby’s Node.js createPage() API
@@ -369,10 +344,10 @@ Create static pages using Gatsby’s Node.js createPage() API
 Install a couple of Gatsby plugins to make this happen.
 
 **npm i gatsby-source-filesystem gatsby-transformer-remark**
- 
-Then configure them in gatsby-config.js:
 
-```js
+**Then configure them in gatsby-config.js:**
+
+```tsx
 module.exports = {
   plugins: [
     `gatsby-plugin-netlify-cms`,
@@ -387,55 +362,55 @@ module.exports = {
   ]
 }
 ```
+
 Restart everything and you’ll be able to see your blog posts at /blog.
 
 However, if you try to navigate into a blog, it doesn’t work because you didn’t tell Gatsby to generate pages for 
 
 each one
- 
 
 Use Gatsby’s Node API to Generate Static Blog Pages
 
 Create a gatsby-node.js in the root directory of your project and add code to create a static page for each blog.
- 
- ```js
+
+```tsx
 const path = require(`path`);
- 
+
 exports.createPages = async ({actions, graphql, reporter}) => {
-  const {createPage} = actions;
- 
-  const blogPostTemplate = path.resolve(`src/templates/blog.js`);
- 
-  const result = await graphql(`
-    {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
-        edges {
-          node {
-            frontmatter {
-              path
-            }
-          }
-        }
-      }
-    }
-  `);
- 
-  // Handle errors
-  if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`);
-    return
-  }
- 
-  result.data.allMarkdownRemark.edges.forEach(({node}) => {
-    createPage({
-      path: node.frontmatter.path,
-      component: blogPostTemplate,
-      context: {}, // additional data can be passed via context
-    })
-  })
+ const {createPage} = actions;
+
+ const blogPostTemplate = path.resolve(`src/templates/blog.js`);
+
+ const result = await graphql(`
+   {
+     allMarkdownRemark(
+       sort: { order: DESC, fields: [frontmatter___date] }
+       limit: 1000
+     ) {
+       edges {
+         node {
+           frontmatter {
+             path
+           }
+         }
+       }
+     }
+   }
+ `);
+
+ // Handle errors
+ if (result.errors) {
+   reporter.panicOnBuild(`Error while running GraphQL query.`);
+   return
+ }
+
+ result.data.allMarkdownRemark.edges.forEach(({node}) => {
+   createPage({
+     path: node.frontmatter.path,
+     component: blogPostTemplate,
+     context: {}, // additional data can be passed via context
+   })
+ })
 };
 ```
 
@@ -445,38 +420,39 @@ You might notice this JavaScript code uses a template at src/templates/blog.js. 
 import React from "react"
 import { graphql } from "gatsby"
 export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
+ data, // this prop will be injected by the GraphQL query below.
 }) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark
-  return (
-    <div className="blog-post-container">
-      <div className="blog-post">
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </div>
-    </div>
-  )
+ const { markdownRemark } = data // data.markdownRemark holds your post data
+ const { frontmatter, html } = markdownRemark
+ return (
+   <div className="blog-post-container">
+     <div className="blog-post">
+       <h1>{frontmatter.title}</h1>
+       <h2>{frontmatter.date}</h2>
+       <div
+         className="blog-post-content"
+         dangerouslySetInnerHTML={{ __html: html }}
+       />
+     </div>
+   </div>
+ )
 }
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        path
-        title
-      }
-    }
-  }
+ query($path: String!) {
+   markdownRemark(frontmatter: { path: { eq: $path } }) {
+     html
+     frontmatter {
+       date(formatString: "MMMM DD, YYYY")
+       path
+       title
+     }
+   }
+ }
 `
-```
+````
+
 Restart your app to see Markdown rendering properly!
- 
+
 Commit your changes and verify everything works in production.
 
 ```js
@@ -484,36 +460,5 @@ git add .
 git commit -m "Add /blog and Markdown support"
 git push origin master
 ```
- 
-Finally verify in your site blog section where you can view enabled links which navigates to blog section. 
 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-
-
-
+Finally verify in your site blog section where you can view enabled links which navigates to blog section.
