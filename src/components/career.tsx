@@ -696,7 +696,7 @@ export default class career extends Component {
                 <Group>
                   <ImageBlog src = {BlogImg}></ImageBlog>
                 </Group>
-                <BlogLink to ={"/blog1"}>
+                <BlogLink to ={"/blog1.md"}>
                     <BlogName>Build a Blog with Gatsby, Netlify and React</BlogName>
                   </BlogLink>
               </BoxOne>
@@ -705,7 +705,7 @@ export default class career extends Component {
                 <Group>
                   <ImageBlog src = {BlogImg}></ImageBlog>
                 </Group>
-                <BlogLink to ={"/a-markdown-page"}>
+                <BlogLink to ={"/index.md"}>
                     <BlogName>How to Deploy a Gatsby Site to Cloudflare Workers With Cloudbuild(CI/CD)</BlogName>
                 </BlogLink>
               </BoxOne>
