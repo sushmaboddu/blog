@@ -4,7 +4,6 @@ module.exports = {
     description: `A website for working with any company Individuals for greater support from us.`,
     author: `@tac`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
-    // icon: `src/images/favicon.svg`,
 
   },
   plugins: [
