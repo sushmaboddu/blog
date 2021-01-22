@@ -62,15 +62,17 @@ const MenuContainer = styled.nav`
 `;
 
 const MenuItem = styled(Link)`
+text-decoration: none;
+padding-left: 17.02px;
   &.active {
     background-color: #0078D7;
-    border:2px solid #BBBBBB;
-    text-decaration:none;
+    border:2px solid  #BBBBBB;
+    text-decoration: none;
   }
   &.hover {
     border:2px solid #BBBBBB;
+    text-decoration: none;
   }
-  padding-left: 17.02px;
 `;
 
 type stateProps = {

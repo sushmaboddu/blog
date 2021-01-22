@@ -4,10 +4,11 @@
   padding:0;
 }
 
-<<<<<<< HEAD
+a {
+  text-decoration: none;
+}
 
-=======
->>>>>>> 32f702f74b3884d7401687e9be37654b9e3756d6
+
 @font-face {
   font-family: "Nunito";
   font-weight: normal;

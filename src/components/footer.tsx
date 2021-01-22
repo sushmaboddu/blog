@@ -39,7 +39,7 @@ const TitleDesc = styled.p`
 `;
 
 const Mail = styled.a`
-  width: 236px;
+  width: 246px;
   height: 50px;
   
   font-family: Nunito;
@@ -51,6 +51,7 @@ const Mail = styled.a`
   display: block;
   text-align: center;
   margin: 30px auto;
+  text-decoration: none;
 `;
 
 const Logo = styled.img`

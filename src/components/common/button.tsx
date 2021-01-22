@@ -15,10 +15,11 @@ export default styled.button`
   border: none;
   outline: none;
   cursor:pointer;
+  text-decoration: none;
 
-  &:hover {
-    background-color: #0078D7;
-  }
+  // &:hover {
+  //   background-color: #0078D7;
+  // }
 
   font-family: Nunito;
   font-size: 20px;

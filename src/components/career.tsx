@@ -420,6 +420,7 @@ const BlogContainer = styled.div`
   flex-direction:column;
   align-items:center;
   justify-content:center;
+  margin-bottom:30px;
 `;
 
 const BlogTitle = styled(Title)`
@@ -427,6 +428,11 @@ const BlogTitle = styled(Title)`
   text-align: center;
   padding: 40px 0;
   margin-top:50px;
+
+  @media (max-width:480px){
+  padding:10px 0;
+  font-size:30px;
+  }
 `;
 
 const BlogBox = styled.div`
@@ -437,6 +443,15 @@ const BlogBox = styled.div`
   margin-top:80px;
   padding-bottom:5%;
   gap:40px;
+
+  @media(max-width:860px){
+    width:80%;
+    margin-top:30x;
+    padding-bottom:30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
 `;
 
 
@@ -449,8 +464,19 @@ const BoxOne = styled.div`
   justify-content:center;
   padding-left:30px;
   padding-right:30px;
-  // border:2px solid red;
   gap:15px;
+
+  @media(max-width:480px){
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding-left:10px;
+    padding-right:10px;
+    gap:15px;
+
+  }
 `;
 
 const BlogLink = styled(Link)`
@@ -462,15 +488,24 @@ const BlogLink = styled(Link)`
 `;
 
 const Group = styled.div`
-  width:500px;
-  display:flex;
-  flex-direction:row;
-  justify-content:center;
-  background: #1E3658;
-  margin-top:20px;
-  border: 1px solid #1E3658;
-  box-sizing: border-box;
-  margin-top:50px;
+    width:500px;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    background: #1E3658;
+    margin-top:20px;
+    border: 1px solid #1E3658;
+    box-sizing: border-box;
+    margin-top:50px;
+
+  @media(max-width:860px){
+    width:80%;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    // margin-left:10%;
+
+  }
 `;
 
 const ImageBlog = styled.img`
@@ -479,6 +514,14 @@ const ImageBlog = styled.img`
   flex-direction:row;
   justify-content:center;
   align-items:center;
+
+  @media(max-width:860px){
+    width:100%;
+    width:250px;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    // margin-left:10%;
   
   
 `;
@@ -491,6 +534,13 @@ const BlogName = styled(Title)`
   font-style: normal;
   text-decoration:none;
   margin-left:5px;
+
+  @media(max-width:860px){
+    width:80%;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    margin-left:10%;
 
 `;
 
@@ -696,7 +746,7 @@ export default class career extends Component {
                 <Group>
                   <ImageBlog src = {BlogImg}></ImageBlog>
                 </Group>
-                <BlogLink to ={"/blog1.md"}>
+                <BlogLink to ={"/blog1"}>
                     <BlogName>Build a Blog with Gatsby, Netlify and React</BlogName>
                   </BlogLink>
               </BoxOne>
@@ -705,7 +755,7 @@ export default class career extends Component {
                 <Group>
                   <ImageBlog src = {BlogImg}></ImageBlog>
                 </Group>
-                <BlogLink to ={"/index.md"}>
+                <BlogLink to ={"/cloud"}>
                     <BlogName>How to Deploy a Gatsby Site to Cloudflare Workers With Cloudbuild(CI/CD)</BlogName>
                 </BlogLink>
               </BoxOne>

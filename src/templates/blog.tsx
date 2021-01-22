@@ -1,77 +1,114 @@
-import * as React from 'react'
-import { graphql } from 'gatsby'
-import Page from '../components/Page'
-import IndexLayout from '../layouts'
-import Container from '../components/Container'
-// import styled from "@emotion/styled";
+
 import '../utils/prismjs-theme.css'
+import { graphql } from 'gatsby'
+import * as React from 'react'
+import SEO from '../components/seo'
+import '../utils/prismjs-theme.css'
+import styled from "@emotion/styled";
 
-// const TagView = styled.code`
-//  backgroung-color: #E5E5E5;
-// `;
+const LayoutBlog = styled.div`
+  max-width:80%;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  margin-left:10%;
+  margin-right:10%;
+
+ 
+
+`;
 
 
-interface PageTemplateProps {
+interface BlogPostTemplateProps {
   data: {
     site: {
       siteMetadata: {
         title: string
-        description: string
-        author: {
-          name: string
-          url: string
-        }
       }
     }
     markdownRemark: {
-      html: string
+      id: string
       excerpt: string
+      html: string
       frontmatter: {
         title: string
-        tags:string
-  
+        date: string
       }
     }
   }
+  pageContext: {
+    previous: any
+    next: any
+  }
 }
 
-const PageTemplate: React.FC<PageTemplateProps> = ({ data }) =>
+class BlogPostTemplate extends React.Component<BlogPostTemplateProps, {}> {
+  render() {
+    const post = this.props.data.markdownRemark
+    // const { previous, next } = this.props.pageContext
 
-(
+    return (
+      <LayoutBlog>
+        <SEO title={post.frontmatter.title} description={post.excerpt} />
+        <h1>{post.frontmatter.title}</h1>
+        <p
+          style={{
+            display: 'absolute',
+            marginBottom: '1rem',
+            marginTop: '-rem',
+            marginRight: '10%',
+            marginLeft: '10%',
+          }}
+        >
+          {post.frontmatter.date}
+        </p>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <hr
+          style={{
+            marginBottom: '14px',
+          }}
+        />
+        <ul
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            listStyle: 'none',
+            padding: 0,
+          }}
+        >
+          {/* <li>
+            {previous && (
+              <Link to={previous.fields.slug} rel="prev">
+                ← {previous.frontmatter.title}
+              </Link>
+            )}
+          </li>
+          <li>
+          </li> */}
+        </ul>
+      </LayoutBlog>
+    )
+  }
+}
 
-  <IndexLayout>
-    <Page>
-    
-      <Container>
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
-        {/* eslint-disable-next-line react/no-danger */}
-        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-        
-        </Container>
-        
-    </Page>
-  </IndexLayout>
-)
+export default BlogPostTemplate
 
-export default PageTemplate
-
-export const query = graphql`
-  query PageTemplateQuery($slug: String!) {
+export const pageQuery = graphql`
+  query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
         title
-        description
-        # author {
-        #   name
-        #   url
-        # }
+        author
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      excerpt(pruneLength: 160)
       html
-      excerpt
       frontmatter {
         title
+      
       }
     }
   }

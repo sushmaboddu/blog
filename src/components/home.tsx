@@ -250,7 +250,7 @@ display:none;
 }
 `;
 const Container = styled.div`
-  width: 106px;
+  width: 116px;
   margin: 0 auto;
   margin-top:-85px;
   display: flex;
@@ -264,7 +264,7 @@ const Container = styled.div`
 `;
 
 const ScrollDown = styled.div`
-  width: 106px;
+  width: 116px;
   height: 50px;
   font-family: Nunito;
   font-style: normal;

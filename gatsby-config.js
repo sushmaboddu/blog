@@ -5,6 +5,7 @@ module.exports = {
     author: `@tac`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
 
+
   },
   plugins: [
     {
@@ -50,9 +51,11 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.svg`, // This path is relative to the root of the site.
+        icon: `./src/images/favicon.svg`, // This path is relative to the root of the site.
       },
     },
+
+    
 
     
     {
@@ -122,6 +125,39 @@ module.exports = {
     },
 
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/bloger`,
+        name: `bloger`,
+      },
+    },
+
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/assets`,
+        name: 'assets',
+      },
+    },
+
+    
+      {
+        resolve: `gatsby-plugin-sharp`,
+        options: {
+          // Available options and their defaults:
+          base64Width: 20,
+          // forceBase64Format: ``, // valid formats: png,jpg,webp
+          // useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
+          stripMetadata: true,
+          defaultQuality: 50,
+          failOnError: true,
+        },
+      },
+    
+
+    
+  
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
@@ -146,6 +182,8 @@ module.exports = {
         ]
       }
     },
+
+  
     'gatsby-transformer-json',
     {
       resolve: 'gatsby-plugin-canonical-urls',
