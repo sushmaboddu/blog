@@ -1,10 +1,10 @@
 ---
 path: blog1
 date: 2020-12-28T10:42:04.734Z
-title: 'Build  a  Blog with Gatsby, Netlify and React:'
-font-weight: normal
+title: 'Build a Blog with Gatsby, Netlify and React:'
 ---
 
+# Build  a  Blog with Gatsby, Netlify and React:
 ![](netlify.jpeg)
 
 # Prerequisites:
