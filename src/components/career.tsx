@@ -24,7 +24,8 @@ const Bhargav = require("../images/team/Bhargav.jpeg") as string;
 
 const Sathwika = require("../images/team/Sathwika.jpg") as string;
 
-const BlogImg = require("../images/blog.png") as string;
+const BlogImg = require("../images/blog1.png") as string;
+const CloudImg = require("../images/netlify.jpeg") as string;
 
 const BgShade = styled.div`
   background: #000000;
@@ -362,8 +363,8 @@ const MemberContainer = styled.div`
   }
 `;
 const TeamBox = styled.div`
-  width: 200px;
-  height: 280px;
+  width: 205px;
+  height: 300px;
   @media (max-width:860px){
     width:200px;
     dislay:flex;
@@ -442,7 +443,7 @@ const BlogBox = styled.div`
   flex-direction:row;
   margin-top:80px;
   padding-bottom:5%;
-  gap:40px;
+  gap:60px;
 
   @media(max-width:860px){
     width:80%;
@@ -451,6 +452,7 @@ const BlogBox = styled.div`
     display:flex;
     flex-direction:column;
     justify-content:center;
+
   }
 `;
 
@@ -460,11 +462,11 @@ const BoxOne = styled.div`
   max-width:600px;
   display:flex;
   flex-direction:column;
-  align-items:center;
+  align-items:left;
   justify-content:center;
   padding-left:30px;
   padding-right:30px;
-  gap:15px;
+  gap:10px;
 
   @media(max-width:480px){
     width:100%;
@@ -487,30 +489,31 @@ const BlogLink = styled(Link)`
   line-height: 1.5;
 `;
 
-const Group = styled.div`
-    width:500px;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    background: #1E3658;
-    margin-top:20px;
-    border: 1px solid #1E3658;
-    box-sizing: border-box;
-    margin-top:50px;
+// const Group = styled.div`
+//     width:500px;
+//     display:flex;
+//     flex-direction:row;
+//     justify-content:center;
+//     background: #1E3658;
+//     margin-top:20px;
+//     border: 1px solid #1E3658;
+//     box-sizing: border-box;
+//     margin-top:50px;
 
-  @media(max-width:860px){
-    width:80%;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    // margin-left:10%;
+//   @media(max-width:860px){
+//     width:80%;
+//     display:flex;
+//     flex-direction:row;
+//     justify-content:center;
+//     // margin-left:10%;
 
-  }
-`;
+//   }
+// `;
 
 const ImageBlog = styled.img`
   display:flex;
-  width:350px;
+  width:500px;
+  height:350px;
   flex-direction:row;
   justify-content:center;
   align-items:center;
@@ -518,6 +521,7 @@ const ImageBlog = styled.img`
   @media(max-width:860px){
     width:100%;
     width:250px;
+    height:300px;
     display:flex;
     flex-direction:row;
     justify-content:center;
@@ -534,6 +538,7 @@ const BlogName = styled(Title)`
   font-style: normal;
   text-decoration:none;
   margin-left:5px;
+  text-decoration: underline;
 
   @media(max-width:860px){
     width:80%;
@@ -541,6 +546,7 @@ const BlogName = styled(Title)`
     flex-direction:row;
     justify-content:center;
     margin-left:10%;
+    text-decoration: underline;
 
 `;
 
@@ -743,18 +749,18 @@ export default class career extends Component {
           <BlogTitle>Blog</BlogTitle>
           <BlogBox>
               <BoxOne>
-                <Group>
-                  <ImageBlog src = {BlogImg}></ImageBlog>
-                </Group>
+              <BlogLink to ={"/blog1"}>
+                  <ImageBlog src = {CloudImg}></ImageBlog>
+                </BlogLink>
                 <BlogLink to ={"/blog1"}>
                     <BlogName>Build a Blog with Gatsby, Netlify and React</BlogName>
                   </BlogLink>
               </BoxOne>
               
               <BoxOne>
-                <Group>
+              <BlogLink to ={"/cloud"}>
                   <ImageBlog src = {BlogImg}></ImageBlog>
-                </Group>
+                </BlogLink>
                 <BlogLink to ={"/cloud"}>
                     <BlogName>How to Deploy a Gatsby Site to Cloudflare Workers With Cloudbuild(CI/CD)</BlogName>
                 </BlogLink>

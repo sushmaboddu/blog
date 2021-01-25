@@ -10,6 +10,7 @@ pre[class*="language-"] {
   background: none;
   text-shadow: 0 4px rgba(0, 0, 0, 0.3);
   font-family: nunito;
+  font-size: 600;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -111,7 +112,7 @@ pre[class*="language-"] {
 
 .token.important,
 .token.bold {
-  font-weight: bold;
+  font-weight: 500;
 }
 .token.italic {
   font-style: italic;

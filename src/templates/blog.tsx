@@ -11,11 +11,8 @@ const LayoutBlog = styled.div`
   display:flex;
   flex-direction: column;
   justify-content:center;
-  margin-left:10%;
-  margin-right:10%;
-
- 
-
+  margin-left:12%;
+  margin-right:12%;
 `;
 
 
