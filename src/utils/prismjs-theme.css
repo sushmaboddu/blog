@@ -4,12 +4,16 @@
  * @author ocodia
  */
 
+ .blog-masonry h1.blog-title {
+  font-family:'Nunito';
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
   color: #E5E5E5;
   background: none;
   text-shadow: 0 4px rgba(0, 0, 0, 0.3);
-  font-family: nunito;
+  font-family: 'nunito';
   font-size: 600;
   text-align: left;
   white-space: pre;

@@ -489,26 +489,7 @@ const BlogLink = styled(Link)`
   line-height: 1.5;
 `;
 
-// const Group = styled.div`
-//     width:500px;
-//     display:flex;
-//     flex-direction:row;
-//     justify-content:center;
-//     background: #1E3658;
-//     margin-top:20px;
-//     border: 1px solid #1E3658;
-//     box-sizing: border-box;
-//     margin-top:50px;
 
-//   @media(max-width:860px){
-//     width:80%;
-//     display:flex;
-//     flex-direction:row;
-//     justify-content:center;
-//     // margin-left:10%;
-
-//   }
-// `;
 
 const ImageBlog = styled.img`
   display:flex;
@@ -531,14 +512,14 @@ const ImageBlog = styled.img`
 `;
 
 const BlogName = styled(Title)`
+  height:80px;
   font-size:24px;
   font-style:normal;
   color: #363636;
   line-height: 40px;
   font-style: normal;
-  text-decoration:none;
-  margin-left:5px;
   text-decoration: underline;
+  
 
   @media(max-width:860px){
     width:80%;
@@ -549,6 +530,34 @@ const BlogName = styled(Title)`
     text-decoration: underline;
 
 `;
+
+const BlogHeader = styled.div`
+  font-family: Nunito;
+  font-size:18px;
+  font-style:normal;
+  font-weight:bold;
+  color: #363636;
+  line-height: 30px;
+  margin-top:20px;
+  
+
+  @media (max-width:480px){
+    font-size:16px;
+  }
+`;
+
+const HeaderDesi = styled.div`
+  font-family: Nunito;
+  font-size:18px;
+  font-style:normal;
+  font-weight:normal;
+  color: #363636;
+  line-height: 30px;
+
+  @media (max-width:480px){
+    font-size:16px;
+  }
+  `;
 
 export default class career extends Component {
   render() {
@@ -755,6 +764,9 @@ export default class career extends Component {
                 <BlogLink to ={"/blog1"}>
                     <BlogName>Build a Blog with Gatsby, Netlify and React</BlogName>
                   </BlogLink>
+
+                  <BlogHeader>Chetan&nbsp;Kumar Bandari</BlogHeader>
+                  <HeaderDesi>DevOps Engineer</HeaderDesi>
               </BoxOne>
               
               <BoxOne>
@@ -764,6 +776,9 @@ export default class career extends Component {
                 <BlogLink to ={"/cloud"}>
                     <BlogName>How to Deploy a Gatsby Site to Cloudflare Workers With Cloudbuild(CI/CD)</BlogName>
                 </BlogLink>
+
+                <BlogHeader>Chetan&nbsp;Kumar Bandari</BlogHeader>
+                  <HeaderDesi>DevOps Engineer</HeaderDesi>
               </BoxOne>
           </BlogBox>
         </BlogContainer>

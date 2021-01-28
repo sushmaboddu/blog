@@ -7,7 +7,23 @@ module.exports = {
 
 
   },
+
+
   plugins: [
+
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Techatcore`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
@@ -43,44 +59,8 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
 
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `tech.at.core`,
-        short_name: `TAC`,
-        start_url: "/",
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
-        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
-        display: `minimal-ui`,
-        icon: `content/assets/favicon.svg`, // This path is relative to the root of the site.
-        // An optional attribute which provides support for CORS check.
-        // If you do not provide a crossOrigin option, it will skip CORS for manifest.
-        // Any invalid keyword or empty string defaults to `anonymous`
-        crossOrigin: `use-credentials`,
-        icon_options: {
-          purpose: `unmaskable`,
-        },
-
-      },
-    },
-
     
-
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `tech.at.core`,
-    //     short_name: `TAC`,
-    //     start_url: `/`,
-    //     background_color: `#663399`,
-    //     theme_color: `#663399`,
-    //     display: `minimal-ui`,
-    //     icon: `./src/images/favicon.svg`, // This path is relative to the root of the site.
-    //   },
-    // },
-
+   
     
 
     
@@ -101,7 +81,7 @@ module.exports = {
 
   
     plugins: [
-      // ...
+
       {
         resolve: 'gatsby-plugin-load-script',
         options: {

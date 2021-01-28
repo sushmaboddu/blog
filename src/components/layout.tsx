@@ -5,6 +5,8 @@ import Footer from "./footer";
 import CookieConsent from 'react-cookie-consent';
 import { Link } from "gatsby";
 
+
+
 interface Props {
   children: ReactNode;
 }
@@ -35,7 +37,8 @@ const Layout = ({ children }: Props) => {
           content="Poly skilled engineering specialists to solve hard problems
           with a robust, pragmatic approach and the right technology."
         />
-        <meta name="author" content="tech.at.core"></meta>
+        <meta name="author" content="tech.at.core" ></meta>
+        
         <title>tech.at.core</title>
       </Helmet>
       <PageStyle>
